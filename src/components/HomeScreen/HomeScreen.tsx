@@ -7,23 +7,23 @@ import { Party } from '../../types';
 
 export interface Props {
   parties: Array<Party>;
-  addParty: (name: string) => void;
+  newParty: () => void;
 }
 
-const HomeScreen  = ({parties, addParty} : Props) => {
+const HomeScreen  = ({parties, newParty, onNameChange} : Props) => {
   return (
     <View style={styles.container}>
       <Text style = {styles.headerText}>Your parties</Text>
       <ScrollView style = {styles.partiesList}>
         {
-          parties.map(party => 
-            <View>
+          parties.map((party, index) => 
+            <View key={index}>
               <Text>{party.name}</Text>
             </View>
           )
         }
       </ScrollView>
-      <TouchableOpacity style = {styles.addPartyButtonText}>
+      <TouchableOpacity onPress = {newParty} style = {styles.addPartyButtonText}>
         <Text style = {styles.addPartyButtonText}>New party!</Text>
       </TouchableOpacity>
       <View style ={{height: 20}}/>

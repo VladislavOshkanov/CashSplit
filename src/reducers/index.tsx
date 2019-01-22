@@ -16,7 +16,7 @@ export function partiesReducer (state: Parties = {parties: []}, action: any): Pa
         case actions.ADD_PARTY:
             let newArray = state.parties.slice()
             newArray.push({name: action.name, friends_ids: [], debts:[[]]} )
-            return {...state, parties: newArray}
+            return {...state, parties: newArray }
     }
     return state;
 }

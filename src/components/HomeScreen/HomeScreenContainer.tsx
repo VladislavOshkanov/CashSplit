@@ -15,10 +15,14 @@ class ExplorerContainer<Props> extends Component<any, any>  {
   componentDidMount(){
 
   }
+  newParty = () => {
+    this.props.navigation.navigate("PartyCreation");
+  }
+ 
   render () {
     return (<HomeScreen
       parties = {this.props.parties}
-      addParty = {this.props.addParty}
+      newParty = {this.newParty}
     />)
   }
 
@@ -32,9 +36,7 @@ export function mapStateToProps ( state : State ){
 
 export function mapDispatchToProps(dispatch: any) {
   return {
-    addParty: ( name: string ) => {
-      dispatch(actions.parties.addParty(name))
-    }
+    
   }
 }
 

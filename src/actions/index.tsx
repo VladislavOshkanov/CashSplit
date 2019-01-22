@@ -11,7 +11,7 @@ export interface Parties {
 }
 function action(type: any, payload: any) : any {
     return {type, ...payload}
-  }
+}
   
 //   export const placesAutocomplete: PlacesAutocompleteRequest = {
 //     request: request => action(constants.PLACES_REQUEST, {request}),
